@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "am.plotnikov.example.grpc";
+option java_outer_classname = "MicronautExample";
+option objc_class_prefix = "HLW";
+
+package am.plotnikov.example.grpc;
+
+service MicronautExampleService {
+  rpc create (MicronautCreateRequest) returns (MicronautCreateReply) {}
+  rpc get (MicronautGetRequest) returns (MicronautGetReply) {}
+}
+
+message MicronautCreateRequest {
+  string name = 1;
+}
+
+message MicronautCreateReply {
+  string uid = 1;
+  string message = 2;
+}
+
+message MicronautGetRequest {
+  string uid = 1;
+}
+
+message MicronautGetReply {
+  string name = 1;
+}

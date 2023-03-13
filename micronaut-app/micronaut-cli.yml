@@ -1,0 +1,6 @@
+applicationType: grpc
+defaultPackage: am.plotnikov
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [annotation-api, app-name, flyway, gradle, grpc, jackson-databind, java, java-application, jdbc-hikari, junit, logback, micronaut-build, postgres, readme, shade, testcontainers, yaml]

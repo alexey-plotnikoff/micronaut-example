@@ -1,0 +1,5 @@
+const val version = "0.1"
+const val mapstructVersion = "1.5.3.Final"
+const val flywayVersion = "9.4.0"
+const val postgresqlVersion = "42.5.0"
+const val jooqVersion = "3.15.11"

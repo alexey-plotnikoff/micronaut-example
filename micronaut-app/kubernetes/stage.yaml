@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  tag: 62f11493
+
+containerPort:
+  http: 9001
+  grpc: 19001
+
+envVars:
+  DATASOURCE_URL: jdbc:postgresql://postgres.default.svc.cluster.local:5432/micronaut-example
+
+secretEnvVars:
+  - name: DATASOURCE_PASSWORD
+    secret_name: postgres-credentials
+    secret_key: POSTGRES_PASSWORD

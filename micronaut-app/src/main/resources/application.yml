@@ -1,0 +1,43 @@
+grpc:
+  server:
+    port: 19001
+    keep-alive-time: 3h
+    max-inbound-message-size: 1024
+
+micronaut:
+  application:
+    name: micronautExample
+  server:
+    port: 9001
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+        step: PT15S
+        descriptions: true
+
+datasources:
+  default:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATASOURCE_URL:`jdbc:postgresql://localhost:5432/micronaut-example`}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:}
+    maximum-pool-size: ${DATASOURCE_POOL_SIZE:5}
+    data-source-properties:
+      ApplicationName: ${micronaut.application.name}
+
+flyway:
+  datasources:
+    default:
+      enabled: true
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
+  prometheus:
+    sensitive: false
+
+resilience4j:

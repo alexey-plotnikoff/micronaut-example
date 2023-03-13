@@ -1,0 +1,17 @@
+Thumbs.db
+.DS_Store
+../.gradle
+micronaut-app/build/
+target/
+out/
+.micronaut/
+.idea
+*.iml
+*.ipr
+*.iws
+.project
+.settings
+.classpath
+.factorypath
+.gradle
+buildSrc/build
