@@ -7,6 +7,14 @@ plugins {
     id("io.spring.dependency-management") version "1.1.0"
 }
 
+// Fix M1 arm64 exception - https://github.com/bmuschko/gradle-docker-plugin/issues/1035
+buildscript {
+    dependencies {
+        classpath("com.github.docker-java:docker-java:$dockerJavaVersion")
+        classpath("com.github.docker-java:docker-java-transport-httpclient5:$dockerJavaVersion")
+    }
+}
+
 dependencies {
     implementation(project(":micronaut-jooq"))
     implementation(project(":micronaut-grpc"))

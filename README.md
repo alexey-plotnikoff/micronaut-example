@@ -41,7 +41,7 @@ docker run -d -p 9001:9001 -p 19001:19001 -e DATASOURCE_URL=jdbc:postgresql://[P
 Build docker native image(read first [this](https://guides.micronaut.io/latest/micronaut-creating-first-graal-app-gradle-java.html)):
 ```
 cd micronaut-app
-./gradlew dockerBuildNative
+../gradlew dockerBuildNative
 ```
 
 # asdf
